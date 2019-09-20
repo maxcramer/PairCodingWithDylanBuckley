@@ -19,7 +19,12 @@ var image__places = [
   '#fourth__image'
 ];
 
-$( document ).ready(function() {
+$( document ).ready(function () {
+  var onLoadImage = '<img src="Images/Boot1.jpg"/>';
+  $('#main__image').html(onLoadImage);
+});
+
+$( document ).ready(function () {
   var image = '<img src="'+data[0].img+'" />';
   // var secondImage = '<img src ="Images/Boot1.jpg"/>';
   // var thirdImage = '<img src ="Images/Boot2.jpg"/>';
@@ -28,20 +33,25 @@ $( document ).ready(function() {
   // $("#second__image").html(secondImage);
   // $("#third__image").html(thirdImage);
   // $("#fourth__image").html(fourthImage);
-  //
   //$('#main__image').html(image);
-
-
   for(var i = 0; i < data.length; i++){
     var image = '<img src="'+data[i].img+'" alt=""/>';
     $(image__places[i]).html(image);
 
     $(image__places[i]).on('click', function(e){
-      var imageIClickedOn = e.target.outerHTML
-      //$("#main__image").html(imageIClickedOn)\
+      var imageIClickedOn = e.target.outerHTML;
+      $('#main__image').html(imageIClickedOn);
 
-      document.getElementById("main__image").innerHTML = imageIClickedOn
-    })
+    //  document.getElementById("main__image").innerHTML = imageIClickedOn
+    });
   }
 
 });
+
+// var imageMain = $('#second__image').first();
+// var createImage = $('<img>');
+//
+// $( document ).ready(function imageOnLoad() {
+//   imageMain.attr('src', $(this).attr('src'));
+//   createImage.attr('src', '#second__image');
+// });
