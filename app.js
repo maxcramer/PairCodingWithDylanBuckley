@@ -30,6 +30,41 @@ var image__places = [
 ];
 
 
+$( document ).ready(function () {
+
+  var onLoadImage = '<img src="Images/Boot1.jpg"/>';
+  $('#main__image').html(onLoadImage);
+
+  var onLoadDescription = '<h2>Boot Title 1</h2><button>Discover 1</button><h5>Description 1</h5>';
+  $('#info').html(onLoadDescription);
+
+  for(var i = 0; i < data.length; i++){
+    var image = '<img src="'+data[i].img+'" alt=""/>';
+    $(image__places[i]).html(image);
+
+    var title = '<h2>'+data[0].title+'</h2>';
+    $(image__places[i]).html(title);
+    var button = '<button>'+data[0].button+'</button>';
+    $(image__places[i]).html(button);
+    var description = '<h5>'+data[0].description+'</h5>';
+    $(image__places[i]).html(description);
+
+
+    $(image__places[i]).on('click', function(e){
+      var imageIClickedOn = e.target.outerHTML;
+      $('#main__image').html(imageIClickedOn);
+
+    //  document.getElementById("main__image").innerHTML = imageIClickedOn
+    });
+
+    $(image__places[i]).on('click', function(e){
+      var imageIClickedOn = e.target.outerHTML;
+      $('#info').html(imageIClickedOn);
+    });
+  }
+
+});
+
 // $( document ).ready(function () {
 //   var onLoadImage = '<img src="Images/Boot1.jpg"/>';
 //   $('#main__image').html(onLoadImage);
@@ -82,43 +117,6 @@ var image__places = [
 //     });
 //   }
 // });
-
-$( document ).ready(function () {
-
-  var onLoadImage = '<img src="Images/Boot1.jpg"/>';
-  $('#main__image').html(onLoadImage);
-
-  var onLoadDescription = '<h2>Boot Title 1</h2><button>Discover 1</button><h5>Description 1</h5>';
-  $('#info').html(onLoadDescription);
-
-  for(var i =0; i < data.length; i++){
-    var title = '<h2>'+data[0].title+'</h2>';
-    var button = '<button>'+data[0].button+'</button>';
-    var description = '<h5>'+data[0].description+'</h5>';
-
-    $(image__places[i]).html(title);
-    $(image__places[i]).html(button);
-    $(image__places[i]).html(description);
-
-    $(image__places[i]).on('click', function(e){
-      var imageIClickedOn = e.target.outerHTML;
-      $('#info').html(imageIClickedOn);
-    });
-  }
-
-  for(var i = 0; i < data.length; i++){
-    var image = '<img src="'+data[i].img+'" alt=""/>';
-    $(image__places[i]).html(image);
-
-    $(image__places[i]).on('click', function(e){
-      var imageIClickedOn = e.target.outerHTML;
-      $('#main__image').html(imageIClickedOn);
-
-    //  document.getElementById("main__image").innerHTML = imageIClickedOn
-    });
-  }
-
-});
 
 
 // var imageMain = $('#second__image').first();
