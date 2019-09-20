@@ -16,17 +16,32 @@
 }
 
 h2 {
-  color: white;
+  color: black;
+  font-weight: bold;
+  margin-top: 3rem;
+  font-size: 3.5rem;
 }
 
 h5 {
-  color: white;
+  color: black;
+  margin-bottom: 3rem;
+  font-weight: 600;
+  font-size: 18px;
 }
 
 button {
   color: black;
   background-color: white;
-  border: 2px solid black;
-  border-radius: 12px;
+  border: 1px solid black;
+  height: 40px;
+  width: 90%;
+  font-size: 20px;
+}
 
+
+
+#info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
