@@ -26,8 +26,7 @@ var data = [
 var image__places = [
   '#second__image',
   '#third__image',
-  '#fourth__image',
-  '#info'
+  '#fourth__image'
 ];
 
 
@@ -61,11 +60,11 @@ $( document ).ready(function () {
     //  document.getElementById("main__image").innerHTML = imageIClickedOn
     });
 
-    // click event to description
+    // click event to des
     // $(image__places[i]).on('click', function(e){
     //   var imageIClickedOn = e.target.outerHTML;
-    //
-    // });
+
+    });
   }
 
 });
