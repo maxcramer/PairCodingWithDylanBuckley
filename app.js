@@ -26,7 +26,8 @@ var data = [
 var image__places = [
   '#second__image',
   '#third__image',
-  '#fourth__image'
+  '#fourth__image',
+  '#info'
 ];
 
 
@@ -39,9 +40,11 @@ $( document ).ready(function () {
   $('#info').html(onLoadDescription);
 
   for(var i = 0; i < data.length; i++){
+    // for main image
     var image = '<img src="'+data[i].img+'" alt=""/>';
     $(image__places[i]).html(image);
 
+    //for description
     var title = '<h2>'+data[0].title+'</h2>';
     $(image__places[i]).html(title);
     var button = '<button>'+data[0].button+'</button>';
@@ -49,18 +52,20 @@ $( document ).ready(function () {
     var description = '<h5>'+data[0].description+'</h5>';
     $(image__places[i]).html(description);
 
-
+    //click even to main image
     $(image__places[i]).on('click', function(e){
       var imageIClickedOn = e.target.outerHTML;
       $('#main__image').html(imageIClickedOn);
+      $('#info').html(imageIClickedOn);
 
     //  document.getElementById("main__image").innerHTML = imageIClickedOn
     });
 
-    $(image__places[i]).on('click', function(e){
-      var imageIClickedOn = e.target.outerHTML;
-      $('#info').html(imageIClickedOn);
-    });
+    // click event to description
+    // $(image__places[i]).on('click', function(e){
+    //   var imageIClickedOn = e.target.outerHTML;
+    //
+    // });
   }
 
 });
