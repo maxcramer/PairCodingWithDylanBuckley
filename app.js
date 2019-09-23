@@ -4,21 +4,21 @@ var data = [
     'img': 'Images/Boot1.jpg',
     'title': 'Boot Title 1',
     'button': 'Discover 1',
-    'description': 'Description 1 ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    'description': 'Description 1'
   },
   {
     'name': 'Boot2',
     'img': 'Images/Boot2.jpg',
     'title': 'Boot Title 2',
     'button': 'Discover 2',
-    'description': 'Description 2 ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    'description': 'Description 2'
   },
   {
     'name': 'Boot3',
     'img': 'Images/Boot3.jpg',
     'title': 'Boot Title 3',
     'button': 'Discover 3',
-    'description': 'Description 3 ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+    'description': 'Description 3'
   }
 ];
 
@@ -32,11 +32,27 @@ var image__places = [
 
 $( document ).ready(function () {
 
-  var onLoadImage = '<img src="Images/Boot1.jpg"/>';
+  // var onLoadImage = '<img src="Images/Boot1.jpg"/>';
+  // $('#main__image').html(onLoadImage);
+  //
+  //var onLoadDescription = '<div class="prod__infoLoad"><h2>Boot Title 1</h2><button>Discover 1</button><h5>Description 1</h5></div>';
+  // $('#info').html(onLoadDescription);
+  //
+  //data[0].onLoad;
+  var onLoadImage = '<img src="'+data[0].img+'" />';
   $('#main__image').html(onLoadImage);
+  var titleOnLoad = data[0].title;
+  $('#info').html(titleOnLoad);
+  var buttonOnLoad = data[0].button;
+  $('#button').html(buttonOnLoad);
+  var descriptionLoad = data[0].description;
+  $('#description').html(descriptionLoad);
 
-  var onLoadDescription = '<h2>Boot Title 1</h2><button>Discover 1</button><h5>Description 1</h5>';
-  $('#info').html(onLoadDescription);
+  // var onLoadTitle = '<img src="'+data[0].title+'" />';
+  // $('#info').html(onLoadTitle);
+
+  // var onLoadData = '<img data-title="'+data[0].title+'" data-description="'+data[0].description+'" data-button="'+data[0].button+'" src="'+data[0].img+'"/>';
+  // $('#info').html(onLoadData);
 
   for(var i = 0; i < data.length; i++){
     // for main image
@@ -50,12 +66,13 @@ $( document ).ready(function () {
 
 
     //click even to main image
-    $(image__places[i]).on('click', function(e){
+    $(image__places[i]).on('click', function onLoad(e){
       var imageIClickedOn = e.target.outerHTML;
       var info = e.target.attributes.getNamedItem('data-title').value;
       var description = e.target.attributes.getNamedItem('data-description').value;
-      var button = e.target.attributes.getNamedItem('button').value;
+      var button = e.target.attributes.getNamedItem('data-button').value;
       $('#main__image').html(imageIClickedOn);
+
       $('#info').html(info);
       $('#description').html(description);
       $('#button').html(button);

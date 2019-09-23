@@ -15,7 +15,7 @@
   justify-content: space-around;
 }
 
-h2 {
+/* h2 {
   color: black;
   font-weight: bold;
   margin-top: 3rem;
@@ -38,8 +38,17 @@ button {
   height: 40px;
   width: 90%;
   font-size: 20px;
-}
+} */
 
+#button {
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  height: 40px;
+  width: 90%;
+  font-size: 20px;
+  text-align: center;
+}
 
 
 #info {
@@ -55,4 +64,16 @@ button {
   margin-bottom: 3rem;
   font-weight: 600;
   font-size: 18px;
+}
+
+.prod__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.prod__infoLoad {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
