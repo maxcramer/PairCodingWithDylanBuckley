@@ -4,21 +4,21 @@ var data = [
     'img': 'Images/Boot1.jpg',
     'title': 'Boot Title 1',
     'button': 'Discover 1',
-    'description': 'Description 1'
+    'description': 'Description 1 ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
   },
   {
     'name': 'Boot2',
     'img': 'Images/Boot2.jpg',
     'title': 'Boot Title 2',
     'button': 'Discover 2',
-    'description': 'Description 2'
+    'description': 'Description 2 ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
   },
   {
     'name': 'Boot3',
     'img': 'Images/Boot3.jpg',
     'title': 'Boot Title 3',
     'button': 'Discover 3',
-    'description': 'Description 3'
+    'description': 'Description 3 ipsum Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
   }
 ];
 
@@ -40,34 +40,37 @@ $( document ).ready(function () {
 
   for(var i = 0; i < data.length; i++){
     // for main image
-    var image = '<img src="'+data[i].img+'" alt=""/>';
-    $(image__places[i]).html(image);
+    var image = '<img data-title="'+data[i].title+'" src="'+data[i].img+'" alt=""/>';
+    var desc = '<h3 data-description="'+data[i].description+'" src="'+data[i].img+'"></h3';
 
-    //for description
-    var title = '<h2>'+data[0].title+'</h2>';
-    $(image__places[i]).html(title);
-    var button = '<button>'+data[0].button+'</button>';
-    $(image__places[i]).html(button);
-    var description = '<h5>'+data[0].description+'</h5>';
-    $(image__places[i]).html(description);
+    // var description = e.target.attributes.getNamedItem('data-description').value;
+    //var description = '<img data-description="'+data[i].description+'" src="'+data[i].img+'" alt=""/>'
+    $(image__places[i]).html(image);
+    $(image__places[i]).html(desc);
+
 
     //click even to main image
     $(image__places[i]).on('click', function(e){
       var imageIClickedOn = e.target.outerHTML;
+      var info = e.target.attributes.getNamedItem('data-title').value;
+      var description = e.target.attributes.getNamedItem('data-description').value;
       $('#main__image').html(imageIClickedOn);
-      $('#info').html(imageIClickedOn);
-
-    //  document.getElementById("main__image").innerHTML = imageIClickedOn
+      $('#info').html(info);
+      $('#description').html(description);
     });
 
-    // click event to des
-    // $(image__places[i]).on('click', function(e){
-    //   var imageIClickedOn = e.target.outerHTML;
-
-    });
   }
 
 });
+
+
+//for description
+// var title = '<h2>'+data[0].title+'</h2>';
+// $(info[i]).html(title);
+// var button = '<button>'+data[0].button+'</button>';
+// $(info[i]).html(button);
+// var description = '<h5>'+data[0].description+'</h5>';
+// $(info[i]).html(description);
 
 // $( document ).ready(function () {
 //   var onLoadImage = '<img src="Images/Boot1.jpg"/>';
