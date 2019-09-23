@@ -22,6 +22,8 @@ h2 {
   font-size: 3.5rem;
 }
 
+
+
 h5 {
   color: black;
   margin-bottom: 3rem;
@@ -41,7 +43,16 @@ button {
 
 
 #info {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  color: black;
+  font-weight: bold;
+  margin-top: 3rem;
+  font-size: 3.5rem;
+}
+
+
+#description {
+  color: black;
+  margin-bottom: 3rem;
+  font-weight: 600;
+  font-size: 18px;
 }

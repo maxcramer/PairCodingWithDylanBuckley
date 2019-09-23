@@ -40,13 +40,13 @@ $( document ).ready(function () {
 
   for(var i = 0; i < data.length; i++){
     // for main image
-    var image = '<img data-title="'+data[i].title+'" src="'+data[i].img+'" alt=""/>';
-    var desc = '<h3 data-description="'+data[i].description+'" src="'+data[i].img+'"></h3';
+    var image = '<img data-title="'+data[i].title+'" data-description="'+data[i].description+'" data-button="'+data[i].button+'" src="'+data[i].img+'" alt=""/>';
+    //var desc = '<h3  src="'+data[i].img+'"></h3';
 
     // var description = e.target.attributes.getNamedItem('data-description').value;
     //var description = '<img data-description="'+data[i].description+'" src="'+data[i].img+'" alt=""/>'
     $(image__places[i]).html(image);
-    $(image__places[i]).html(desc);
+    // $(image__places[i]).html(desc);
 
 
     //click even to main image
@@ -54,9 +54,12 @@ $( document ).ready(function () {
       var imageIClickedOn = e.target.outerHTML;
       var info = e.target.attributes.getNamedItem('data-title').value;
       var description = e.target.attributes.getNamedItem('data-description').value;
+      var button = e.target.attributes.getNamedItem('button').value;
       $('#main__image').html(imageIClickedOn);
       $('#info').html(info);
       $('#description').html(description);
+      $('#button').html(button);
+
     });
 
   }
